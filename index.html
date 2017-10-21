@@ -5,8 +5,10 @@
     <title>Pokedex</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="action.js"></script>
   </head>
-  <body>
+
+  <body onload="pokedex()">
 
     <!-- Toolbar -->
     <div id="toolbar">
@@ -18,9 +20,11 @@
     <div id="container" class="d-flex flex-wrap justify-content-center">
 
       <div class="pokemon">
+
         <div class="photo">
           <img src="img/photos/01.jpg">
         </div>
+
         <div class="info">
           <h2>Nombre del pokemon</h2>
           <div class="d-flex justify-content-between">
@@ -28,6 +32,7 @@
             <img src="img/types/bug.png">
           </div>
         </div>
+
       </div>
 
       <div class="pokemon">
