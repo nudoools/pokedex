@@ -1,41 +1,81 @@
-function pokedex(){
-  
-  var id = "";
-  var name = "";
-  var photo = "";
-  var type = "";
+function json() {
+	var content = "";
 
-  var contentPhoto = "";
-  var contentInfo = "";
-  var infoName = "";
-  var infoType = "";
-  var infoId = "";
-  var auxDiv = "";
-  var content = "";
+	for(var i=0; i<masPokemones.length; i++){
+	
+		if(masPokemones[i].type.length	==	2){
+			if(masPokemones[i].type[0] == "grass" && masPokemones[i].type[1] == "poison"){
+	
+					content += "<div class='grassAndpoison'>";
+		
+						content += "<div class='pokemonImage'>";
+							content += "<img class='pokemon-img' src='" + masPokemones[i].ThumbnailImage +"'/>";
+						content += "</div>";
+		
+						content += "<h2 class='pokemon-name'>" + masPokemones[i].name + "</h1>";
+						content += "<h1 class='pokemon-id'>" + masPokemones[i].id + "</h2>";
+						/* console.log("El array tiene: " + masPokemones[i].type.length + "elementos"); */
+						
+						content += "<div class='d-flex justify-content-center'>";
+						content += "<img class='pokemon-type' src='img/types/" + masPokemones[i].type[0] + ".png'/>";
+						content += "<img class='pokemon-type' src='img/types/" + masPokemones[i].type[1] + ".png'/>";
+						content += "</div>"
+	
+					content += "</div>"	
+					
+    	 		}
 
-  for(var i=0; i < pokemones.length; i++){
-    id = pokemones[i].id;
-    name = pokemones[i].name;
-    photo = pokemones[i].photo;
-    type = pokemones[i].type;
+    	 	else if(masPokemones[i].type[0] == "fire" && masPokemones[i].type[1] == "flying"){
+	
+					content += "<div class='fireAndflying'>";
+		
+						content += "<div class='pokemonImage'>";
+							content += "<img class='pokemon-img' src='" + masPokemones[i].ThumbnailImage +"'/>";
+						content += "</div>";
+		
+						content += "<h2 class='pokemon-name'>" + masPokemones[i].name + "</h1>";
+						content += "<h1 class='pokemon-id'>" + masPokemones[i].id + "</h2>";
+						/* console.log("El array tiene: " + masPokemones[i].type.length + "elementos"); */
+						
+						content += "<div class='d-flex justify-content-center'>";
+						content += "<img class='pokemon-type' src='img/types/" + masPokemones[i].type[0] + ".png'/>";
+						content += "<img class='pokemon-type' src='img/types/" + masPokemones[i].type[1] + ".png'/>";
+						content += "</div>"
+	
+					content += "</div>"
+    	 		}
+			}
+	
+		else if(masPokemones[i].type.length	==	1) {
+			for(var i=0; i<masPokemones.length; i++){
+				content += "<div class='pokemonItem'>";
+	
+					content += "<div class='pokemonImage'>";
+						content += "<img class='pokemon-img' src='" + masPokemones[i].ThumbnailImage +"'/>";
+					content += "</div>";
+	
+					content += "<h2 class='pokemon-name'>" + masPokemones[i].name + "</h1>";
+					content += "<h1 class='pokemon-id'>" + masPokemones[i].id + "</h2>";
+					/* console.log("El array tiene: " + masPokemones[i].type.length + "elementos"); */
+					if(masPokemones[i].type.length	==	2){
+						content += "<div class='d-flex justify-content-center'>";
+						content += "<img class='pokemon-type' src='img/types/" + masPokemones[i].type[0] + ".png'/>";
+						content += "<img class='pokemon-type' src='img/types/" + masPokemones[i].type[1] + ".png'/>";
+						content += "</div>"
+					} else {
+						content += "<div class='Xd-flex justify-content-center pokemon-uni-type'>";
+						content += "<img class='pokemon-uni-type' src='img/types/" + masPokemones[i].type +".png'/>";
+						content += "</div>"
+					}
+	
+				content += "</div>"	
+						
+			}
+		}	
+	}
 
-    console.log(id + name + photo + type);
-
-    //constructor de div photo
-    contentPhoto = "<div class='photo'>" + "<img src='img/photos/" + photo + ".jpg'>" + "</div>";
-
-    //constructor de div info
-    infoName = "<h2>" + name + "</h2>";
-    infoId = "<span>" + id + "</span>";
-    infoType = "<img src='img/types/" + type + ".png'>";
-    auxDiv = "<div class='d-flex justify-content-between'>" + infoId + infoType + "</div>";
-    contentInfo = "<div class='info'>" + infoName + auxDiv + "</div>";
-
-    //constructor de div pokemon
-    content = content + "<div class='pokemon'>" + contentPhoto + contentInfo + "</div>";
-  }
-
-  document.getElementById('container').innerHTML = content;
-   console.log(content);
-
+	console.log(content);
+	document.getElementById("result").innerHTML = content;								
 }
+
+

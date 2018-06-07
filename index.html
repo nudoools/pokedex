@@ -1,94 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Pokedex</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">
-    <script type="text/javascript" src="pokemon.json"></script>
-    <script type="text/javascript" src="action.js"></script>
-  </head>
+<!doctype html>
+<html lang="en">
 
-  <body onload="pokedex()">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<title>Pókemon</title>
 
-    <!-- Toolbar -->
-    <div id="toolbar">
-      <img src="img/logo.png" alt="Logotipo">
-      <input type="text" class="form-control small-box" placeholder="buscar pokemones">
-    </div>
+		<!--- CSS de Bootstrap --->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-    <!-- Contenedor de pokemones -->
-    <div id="container" class="d-flex flex-wrap justify-content-center">
+		<link rel="stylesheet" href="styles.css">
+	</head>
 
-      <div class="pokemon">
+	<body onload="json()">
 
-        <div class="photo">
-          <img src="img/photos/01.jpg">
-        </div>
+		<nav class="navbar navbar-light bg-red contenedor">
+ 			 <img id="logo" src="img/logo.png" alt="Logo de Pókemon"/>
+  				<form class="form-inline">
+   					 <input class="form-control mr-sm-2 buscador" type="search" placeholder="Buscar Pókemon" aria-label="Search">
+   					 <button class="btn btn-success my-2 my-sm-0" type="submit">¡Buscar!</button>
+ 				 </form>
+		</nav>
 
-        <div class="info">
-          <h2>Nombre del pokemon</h2>
-          <div class="d-flex justify-content-between">
-            <span>001</span>
-            <img src="img/types/bug.png">
-          </div>
-        </div>
+		<div id="result"></div>
 
-      </div>
+		<script type="text/javascript" src=masPokemones.json></script>
+		<script type="text/javascript" src="pokemon.json"></script>
+		<script type="text/javascript" src="action.js"></script>
 
-      <div class="pokemon">
-        <div class="photo">
-          <img src="img/photos/02.jpg">
-        </div>
-        <div class="info">
-          <h2>Nombre del pokemon</h2>
-          <div class="d-flex justify-content-between">
-            <span>001</span>
-            <img src="img/types/bug.png">
-          </div>
-        </div>
-      </div>
-
-      <div class="pokemon">
-        <div class="photo">
-          <img src="img/photos/01.jpg">
-        </div>
-        <div class="info">
-          <h2>Nombre del pokemon</h2>
-          <div class="d-flex justify-content-between">
-            <span>001</span>
-            <img src="img/types/bug.png">
-          </div>
-        </div>
-      </div>
-
-      <div class="pokemon">
-        <div class="photo">
-          <img src="img/photos/01.jpg">
-        </div>
-        <div class="info">
-          <h2>Nombre del pokemon</h2>
-          <div class="d-flex justify-content-between">
-            <span>001</span>
-            <img src="img/types/bug.png">
-          </div>
-        </div>
-      </div>
-
-      <div class="pokemon">
-        <div class="photo">
-          <img src="img/photos/01.jpg">
-        </div>
-        <div class="info">
-          <h2>Nombre del pokemon</h2>
-          <div class="d-flex justify-content-between">
-            <span>001</span>
-            <img src="img/types/bug.png">
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </body>
+		<!--- Archivos de JavaScript de Bootstrap --->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		
+	</body>
 </html>
